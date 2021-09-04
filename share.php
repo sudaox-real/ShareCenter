@@ -39,7 +39,8 @@ $id = $array['id'];
   href="https://twitter.com/intent/tweet?text=Check out my file '<?php echo($filename); ?>' on ShareCenter!"
   data-size="large">
 Tweet</a><br>
-<a href="sms:0&body=Check out my file called <?php echo($filename); ?> at http://sudaox.tech/sharecenter/file.php?f=<?php echo($id); ?>">SMS</a>
+<a href="sms:0&body=Check out my file called <?php echo($filename); ?> at http://sudaox.tech/sharecenter/file.php?f=<?php echo($id); ?>">SMS</a><br>
+<img src="qr.php?id=<?php echo($id); ?>" width="300" height="300">
 </center>
 </body>
 </html>
