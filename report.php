@@ -5,3 +5,5 @@
 <body>
 	<h3>Coming soon!</h3>
 	<button onclick="history.back();">Back</button>
+</body>
+</html>
