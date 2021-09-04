@@ -31,7 +31,7 @@ $ext = substr(strtolower($filename), -3);
 <p>You are downloading <b><?php echo(htmlspecialchars($filename)); ?></b></p>
 <a href="download.php?id=<?php echo(htmlspecialchars($id)); ?>"><button>Download</button></a><br>
 <img id="preview" class="preview" style="display: <?php $is_picture = getimagesize("file/" . $id)!==FALSE; if($is_picture) { echo("inline"); } else { echo("none"); } ?>;" src="preview.php?id=<?php echo($id); ?>">
- <audio style="display: <?php if($ext === "mp3") { echo("inline"); } else { echo("none"); } ?>;"autoplay controls>
+ <audio style="display: <?php if($ext === "mp3" || $ext === "wav" || $ext === "ogg") { echo("inline"); } else { echo("none"); } ?>;"autoplay controls>
   <source src="audio.php?id=<?php echo($id); ?>" type="audio/mpeg">
   <source src="audio.php?id=<?php echo($id); ?>" type="audio/mpeg">
 </audio> 
