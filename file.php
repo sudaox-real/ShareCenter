@@ -8,6 +8,7 @@ if(!file_exists("file/" . $_GET['f'])) {
 $array = json_decode(file_get_contents("file/" . $_GET['f'] . ".json"), true);
 $filename = $array['fname'];
 $id = $array['id'];
+$ext = substr(strtolower($filename), -3);
 ?>
 <html>
 <head>
@@ -25,11 +26,15 @@ $id = $array['id'];
 <h3>ShareCenter - The simple way to share</h3>
 <a href="report.php?id=<?php echo($id); ?>">Report</a><br>
 <a href="index.php">Upload your own file</a><br>
-<a href="share.php?id=<?php echo($id); ?>">Share</a>
+<a href="share.php?id=<?php echo($id); ?>">Share</a><br>
 <a href="delete.php?id=<?php echo($id); ?>">Delete file</a>
 <p>You are downloading <b><?php echo(htmlspecialchars($filename)); ?></b></p>
 <a href="download.php?id=<?php echo(htmlspecialchars($id)); ?>"><button>Download</button></a><br>
 <img id="preview" class="preview" style="display: <?php $is_picture = getimagesize("file/" . $id)!==FALSE; if($is_picture) { echo("inline"); } else { echo("none"); } ?>;" src="preview.php?id=<?php echo($id); ?>">
+ <audio style="display: <?php if($ext === "mp3") { echo("inline"); } else { echo("none"); } ?>;"autoplay controls>
+  <source src="audio.php?id=<?php echo($id); ?>" type="audio/mpeg">
+  <source src="audio.php?id=<?php echo($id); ?>" type="audio/mpeg">
+</audio> 
 <?php
 if($is_picture) {
 	echo("<br>");
