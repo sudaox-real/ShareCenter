@@ -14,3 +14,13 @@ if($ext === "mp3") {
 	header('Content-Disposition: filename="' . $filename . '"');
 	readfile("file/" . $id);
 }
+if($ext === "wav") {
+	header("Content-Type: audio/wav");
+	header('Content-Disposition: filename="' . $filename . '"');
+	readfile("file/" . $id);
+}
+if($ext === "ogg") {
+	header("Content-Type: audio/ogg");
+	header('Content-Disposition: filename="' . $filename . '"');
+	readfile("file/" . $id);
+}
